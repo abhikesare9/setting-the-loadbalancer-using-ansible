@@ -1,0 +1,20 @@
+- hosts: lb
+  tasks:
+        - name: "install haproxy"
+          package: 
+            name: "haproxy"
+            state: present
+
+
+        - name: "copy haproxy file to load balancer"
+          template:
+                  src: "haproxy.cfg"
+                  dest: "/etc/haproxy"
+
+
+         
+       
+        - name: "restart haproxy"
+          service:
+                  name: "haproxy"
+                  state: restarted 
