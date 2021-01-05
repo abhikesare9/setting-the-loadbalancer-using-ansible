@@ -9,7 +9,7 @@
         - name: "copy haproxy file to load balancer"
           template:
                   src: "haproxy.cfg"
-                  dest: "/etc/haproxy"
+                  dest: "/etc/haproxy/"
 
 
          
